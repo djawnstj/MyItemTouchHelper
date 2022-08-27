@@ -16,11 +16,13 @@ class ItemTouchCallback(private val listener: ItemTouchHelperListener): ItemTouc
         return makeMovementFlags(dragFlags, 0)
     }
 
+    /** 아이템이 움직일떼 호출되는 함수 */
     override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder, target: RecyclerView.ViewHolder): Boolean {
         listener.onItemMove(viewHolder.adapterPosition, target.adapterPosition)
         return false
     }
 
+    /** 아이템이 스와이프 될때 호출되는 함수 */
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 //        TODO("Not yet implemented")
     }
