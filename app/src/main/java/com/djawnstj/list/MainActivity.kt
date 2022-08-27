@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.djawnstj.list.databinding.ActivityMainBinding
 
+/**
+ * RecyclerView.Adapter 에서 ItemTouchHelper 이용하기
+ */
 class MainActivity : AppCompatActivity() {
 
     companion object { private const val TAG = "MainActivity" }
@@ -33,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         binding.recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.recyclerView.adapter = recyclerViewAdapter
 
+        // 리싸이클러뷰에 itemTouchHelper 연결
         itemTouchHelper.attachToRecyclerView(binding.recyclerView)
 
         setListItems()
