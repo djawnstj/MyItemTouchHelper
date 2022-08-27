@@ -10,6 +10,12 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(
     companion object { private const val TAG = "RecyclerViewAdapter" }
 
     private val list = ArrayList<String>()
+    override fun onItemMove(from: Int, to: Int) {
+        val item: String = list[from]
+        list.removeAt(from)
+        list.add(to, item)
+        notifyItemMoved(from, to)
+    }
 
     fun submitList(list: List<String>) {
         this.list.clear()
@@ -31,13 +37,6 @@ class RecyclerViewAdapter: RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>(
             binding.holderText.text = item
         }
 
-    }
-
-    override fun onItemMove(from: Int, to: Int) {
-        val item: String = list[from]
-        list.removeAt(from)
-        list.add(to, item)
-        notifyItemMoved(from, to)
     }
 
 }
