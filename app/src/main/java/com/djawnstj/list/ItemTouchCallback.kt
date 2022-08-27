@@ -15,7 +15,7 @@ class ItemTouchCallback(private val listener: ItemTouchHelperListener): ItemTouc
         val swipeFlags = ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
 
         // 드래그 이동을 만드는 함수
-        return makeMovementFlags(dragFlags, 0)
+        return makeMovementFlags(dragFlags, swipeFlags)
     }
 
     /** 아이템이 움직일떼 호출되는 함수 */
@@ -28,4 +28,5 @@ class ItemTouchCallback(private val listener: ItemTouchHelperListener): ItemTouc
     override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
 //        TODO("Not yet implemented")
     }
+
 }
