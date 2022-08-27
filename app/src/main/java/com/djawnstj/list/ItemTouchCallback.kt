@@ -11,6 +11,8 @@ class ItemTouchCallback(private val listener: ItemTouchHelperListener): ItemTouc
     override fun getMovementFlags(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder): Int {
         // 드래그 방향
         val dragFlags = ItemTouchHelper.UP or ItemTouchHelper.DOWN
+        // 스와이프 방향
+        val swipeFlags = ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT
 
         // 드래그 이동을 만드는 함수
         return makeMovementFlags(dragFlags, 0)
